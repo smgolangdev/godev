@@ -2,9 +2,10 @@
 package main
 
 import (
-	"bitbucket.org/smtechnocrat/goexer/exers"
 	"fmt"
 	"github.com/docopt/docopt-go"
+	//"github.com/smgolangdev/godev/goexer/exers"
+	"github.com/smgolangdev/godev/goexers/exers"
 	"strconv"
 )
 
@@ -51,6 +52,10 @@ Options:
 		}
 	case "54":
 		fmt.Println("Runninge exercise number - 54")
+	case "58":
+		fmt.Println("Running exercise number - 58")
+		ans, err := exers.MyRt(-7)
+		fmt.Println(ans, err)
 	case "64":
 		m := makeMap("myKey", Vertex{40.6844, -74.39967})
 		v := map[string]Vertex{

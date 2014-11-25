@@ -69,3 +69,27 @@ func Fibonacci() func() int {
 	}
 	return f
 }
+
+func ANew() int {
+	return 20
+}
+
+///////////////////////////////////////////////////////////////////
+//Modify the SqareRt function implemented earlier to return error when given a negative integer
+//////////////////////////////////////////////////
+type ErrNegativeSqrt float64
+
+func (e ErrNegativeSqrt) Error() string {
+	if e < 0 {
+		return "Cannot Sqrt negative number."
+	}
+	return "Success"
+}
+
+func MyRt(x float64) (float64, error) {
+	e := ErrNegativeSqrt(x)
+	if e.Error() != "Success" {
+		return x, e
+	}
+	return SquareRoot(x), nil
+}
